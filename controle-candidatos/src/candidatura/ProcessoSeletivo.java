@@ -45,6 +45,10 @@ public class ProcessoSeletivo {
         }
     }
 
+    public static boolean atender(){
+        return new Random().nextInt(3) == 1;
+    }
+
     public static double valorPretendido(){
         return Math.round(ThreadLocalRandom.current().nextDouble(1800, 2200));
     }
