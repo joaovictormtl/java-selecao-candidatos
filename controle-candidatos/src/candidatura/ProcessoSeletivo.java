@@ -45,6 +45,27 @@ public class ProcessoSeletivo {
         }
     }
 
+    public static void entrarEmContato(String [] selecionados){
+        int tentativas = 0;
+        
+        for(String selecionado : selecionados){
+            boolean atendeu = false;
+            for(int i = 0; i < 3; i++){
+                if(atender()){
+                    atendeu = true;
+                    tentativas++;
+                    System.out.println("CONSEGUIMOS CONTATO COM "+selecionado+" APÓS "+tentativas+" TENTATIVAS.");
+                    break;
+                }
+                tentativas++;
+            }
+            if(!atendeu){
+                System.out.println("NÃO CONSEGUIMOS CONTATO COM "+selecionado+".");
+            }
+            tentativas = 0; 
+        }
+    }
+
     public static boolean atender(){
         return new Random().nextInt(3) == 1;
     }
