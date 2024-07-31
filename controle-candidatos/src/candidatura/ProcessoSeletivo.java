@@ -39,6 +39,12 @@ public class ProcessoSeletivo {
         return selecionados;
     }
 
+    public static void imprimirSelecionados(String [] selecionados){
+        for(String selecionado : selecionados){
+            System.out.println(selecionado);
+        }
+    }
+
     public static double valorPretendido(){
         return Math.round(ThreadLocalRandom.current().nextDouble(1800, 2200));
     }
